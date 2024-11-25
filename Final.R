@@ -1,2 +1,3 @@
 library(readr)
-heart <- read_csv("aBnb.csv")
+Abnb <- read_csv("Abnb_trimmed.csv")
+View(Abnb)
