@@ -2,60 +2,41 @@
 library(ggplot2)
 library(dplyr)
 library(readxl)  # For reading Excel files
-library(caret)   # For model performance metrics
 
 # Load the cleaned data
 data <- read_excel("Cleaned_Abnb_Data.xlsx")
 
-# Ensure that the required column `log_price` is present
-# If not, create it by taking the log of the `price` column
-if (!"log_price" %in% colnames(data)) {
-  data <- data %>% mutate(log_price = log(price))
-}
+# Simple Regression: Single Variable Analysis
+# Regression: Price vs. Availability (availability_365)
+model_availability <- lm(price ~ availability_365, data = data)
+summary(model_availability)
 
-# Check structure of the data
-str(data)
+# Regression: Price vs. Number of Reviews
+model_reviews <- lm(price ~ number_of_reviews, data = data)
+summary(model_reviews)
 
-# Updated Full Model with Log Price
-model_full_log <- lm(log_price ~ room_type + number_of_reviews + reviews_per_month + availability_365, data = data)
-summary(model_full_log)
+# Regression: Price vs. Room Type
+model_room_type <- lm(price ~ room_type, data = data)
+summary(model_room_type)
 
-# Residual Diagnostics
-# Residuals vs. Fitted Values
-ggplot(data, aes(x = predict(model_full_log), y = residuals(model_full_log))) +
+# Multiple Regression: All Variables Together
+model_full <- lm(price ~ room_type + number_of_reviews + reviews_per_month + availability_365, data = data)
+summary(model_full)
+
+# Visualize Simple Regression: Price vs Availability (availability_365)
+ggplot(data, aes(x = availability_365, y = price)) +
   geom_point(alpha = 0.5, color = "blue") +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
-  labs(title = "Residuals vs Fitted Values (Log Model)",
-       x = "Fitted Values",
-       y = "Residuals")
+  geom_smooth(method = "lm", color = "red", linetype = "dashed") +
+  labs(title = "Price vs. Availability (availability_365)",
+       x = "Availability (days per year)",
+       y = "Price")
 
-# Normal Q-Q Plot for Residuals
-qqnorm(residuals(model_full_log))
-qqline(residuals(model_full_log), col = "red")
+# Visualize Multiple Regression: Actual vs Predicted Prices
+data$predicted_price <- predict(model_full)
 
-# Model Performance Metrics
-data$predicted_log_price <- predict(model_full_log)
-data$predicted_price <- exp(data$predicted_log_price) # Back-transform to original price scale
-actual_vs_predicted <- data.frame(
-  Actual = data$price,
-  Predicted = data$predicted_price
-)
-
-# Calculate Performance Metrics
-rmse <- sqrt(mean((actual_vs_predicted$Actual - actual_vs_predicted$Predicted)^2))
-mae <- mean(abs(actual_vs_predicted$Actual - actual_vs_predicted$Predicted))
-r2 <- cor(actual_vs_predicted$Actual, actual_vs_predicted$Predicted)^2
-
-cat("Model Performance Metrics:\n")
-cat("RMSE:", rmse, "\n")
-cat("MAE:", mae, "\n")
-cat("R-squared:", r2, "\n")
-
-# Visualization: Actual vs Predicted Prices
-ggplot(actual_vs_predicted, aes(x = Predicted, y = Actual)) +
+ggplot(data, aes(x = predicted_price, y = price)) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
-  scale_x_log10() + scale_y_log10() + # Use log scales for better visualization
-  labs(title = "Actual vs Predicted Prices (Improved Model)",
+  labs(title = "Actual vs Predicted Prices (Multiple Regression)",
        x = "Predicted Price",
        y = "Actual Price")
