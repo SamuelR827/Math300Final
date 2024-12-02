@@ -1,24 +1,14 @@
 # Load necessary libraries
 library(ggplot2)
 library(dplyr)
-library(caret) # For model performance metrics
+library(readxl)  # For reading Excel files
+library(caret)   # For model performance metrics
 
-# Load the data
-data <- read.csv("Abnb_trimmed.csv")
+# Load the cleaned data
+data <- read_excel("Cleaned_Abnb_Data.xlsx")
 
-# Data Cleaning
-data$reviews_per_month[is.na(data$reviews_per_month)] <- 0
-data <- data %>% filter(price > 0)
-
-# Remove Outliers: Prices above the 99th percentile
-price_99th <- quantile(data$price, 0.99)
-data <- data %>% filter(price <= price_99th)
-
-# Log Transformation of Price
-data$log_price <- log(data$price)
-
-# Feature Engineering: Availability Rate
-data$availability_rate <- data$availability_365 / 365
+# Check structure of the data
+str(data)
 
 # Updated Full Model with Log Price
 model_full_log <- lm(log_price ~ room_type + number_of_reviews + reviews_per_month + availability_rate, data = data)
