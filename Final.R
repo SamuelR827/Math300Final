@@ -4,7 +4,7 @@ library(dplyr)
 library(readxl)  # For reading Excel files
 
 # Load the cleaned data
-data <- read_excel("Cleaned_Abnb_Data.xlsx")
+data <- read_excel("Filtered_Cleaned_Abnb_Data.xlsx")
 
 # Simple Regression: Single Variable Analysis
 # Regression: Price vs. Availability (availability_365)
