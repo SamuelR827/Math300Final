@@ -7,11 +7,17 @@ library(caret)   # For model performance metrics
 # Load the cleaned data
 data <- read_excel("Cleaned_Abnb_Data.xlsx")
 
+# Ensure that the required column `log_price` is present
+# If not, create it by taking the log of the `price` column
+if (!"log_price" %in% colnames(data)) {
+  data <- data %>% mutate(log_price = log(price))
+}
+
 # Check structure of the data
 str(data)
 
 # Updated Full Model with Log Price
-model_full_log <- lm(log_price ~ room_type + number_of_reviews + reviews_per_month + availability_rate, data = data)
+model_full_log <- lm(log_price ~ room_type + number_of_reviews + reviews_per_month + availability_365, data = data)
 summary(model_full_log)
 
 # Residual Diagnostics
