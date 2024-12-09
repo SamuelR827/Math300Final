@@ -4,24 +4,19 @@ library(dplyr)
 library(readxl)
 
 # Load the cleaned data
-data <- read.csv("filtered_data.csv")
+data <- read.csv("filtered_data2.csv")
 
 # Descriptive Statistics
 summary(data)
 
-# Boxplots for Price by Room Type
-ggplot(data, aes(x = room_type, y = price)) +
-  geom_boxplot(fill = "blue", color = "black") +
-  labs(title = "Price by Room Type",
-       x = "Room Type",
-       y = "Price")
-
 # Histogram of Prices
-ggplot(data, aes(x = price)) +
+p2 <- ggplot(data, aes(x = price)) +
   geom_histogram(bins = 30, fill = "blue", color = "black") +
   labs(title = "Histogram of Prices",
        x = "Price",
        y = "Count")
+p2
+ggsave("histogram_of_prices.png", plot = p2, width = 8, height = 6)
 
 # ---- Function for Confidence Intervals and Hypothesis Testing ----
 display_conf_intervals <- function(model, model_name) {
@@ -45,25 +40,41 @@ perform_hypothesis_testing <- function(model, predictors) {
 
 # ---- Regression Models, Visualizations, Residual Analysis, and Hypothesis Testing ----
 
+# Boxplots for Price by Room Type
+# ---- Regression Model for Price by Room Type ----
+model_room_type <- lm(price ~ room_type, data = data)
+summary(model_room_type)
+
+p1 <- ggplot(data, aes(x = room_type, y = price)) +
+  geom_boxplot(fill = "blue", color = "black") +
+  labs(title = "Price by Room Type",
+       x = "Room Type",
+       y = "Price")
+p1
+ggsave("boxplot_price_by_room_type.png", plot = p1, width = 8, height = 6)
+
 # 1. Price vs Availability (availability_365)
 model_availability <- lm(price ~ availability_365, data = data)
 summary(model_availability)
 
-# Visualization
-ggplot(data, aes(x = availability_365, y = price)) +
+p3 <- ggplot(data, aes(x = availability_365, y = price)) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_smooth(method = "lm", color = "red", linetype = "dashed") +
   labs(title = "Price vs. Availability (availability_365)",
        x = "Availability (days per year)",
        y = "Price")
+p3
+ggsave("price_vs_availability.png", plot = p3, width = 8, height = 6)
 
-# Residual Analysis
-ggplot(data, aes(x = predict(model_availability), y = resid(model_availability))) +
+# Residual Analysis for Availability
+p4 <- ggplot(data, aes(x = predict(model_availability), y = resid(model_availability))) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
   labs(title = "Residuals vs Fitted (Availability)",
        x = "Fitted Values",
        y = "Residuals")
+p4
+ggsave("residuals_availability.png", plot = p4, width = 8, height = 6)
 
 # Confidence Intervals and Hypothesis Testing
 display_conf_intervals(model_availability, "Availability")
@@ -73,96 +84,46 @@ perform_hypothesis_testing(model_availability, c("availability_365"))
 model_reviews <- lm(price ~ number_of_reviews, data = data)
 summary(model_reviews)
 
-# Visualization
-ggplot(data, aes(x = number_of_reviews, y = price)) +
+p5 <- ggplot(data, aes(x = number_of_reviews, y = price)) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_smooth(method = "lm", color = "red", linetype = "dashed") +
   labs(title = "Price vs. Number of Reviews",
        x = "Number of Reviews",
        y = "Price")
+p5
+ggsave("price_vs_number_of_reviews.png", plot = p5, width = 8, height = 6)
 
-# Residual Analysis
-ggplot(data, aes(x = predict(model_reviews), y = resid(model_reviews))) +
+# Residual Analysis for Number of Reviews
+p6 <- ggplot(data, aes(x = predict(model_reviews), y = resid(model_reviews))) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
   labs(title = "Residuals vs Fitted (Number of Reviews)",
        x = "Fitted Values",
        y = "Residuals")
-
-# Confidence Intervals and Hypothesis Testing
-display_conf_intervals(model_reviews, "Number of Reviews")
-perform_hypothesis_testing(model_reviews, c("number_of_reviews"))
+p6
+ggsave("residuals_number_of_reviews.png", plot = p6, width = 8, height = 6)
 
 # 3. Price vs Reviews Per Month
 model_reviews_per_month <- lm(price ~ reviews_per_month, data = data)
 summary(model_reviews_per_month)
 
-# Visualization
-ggplot(data, aes(x = reviews_per_month, y = price)) +
+p7 <- ggplot(data, aes(x = reviews_per_month, y = price)) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_smooth(method = "lm", color = "red", linetype = "dashed") +
   labs(title = "Price vs. Reviews Per Month",
        x = "Reviews Per Month",
        y = "Price")
+p7
+ggsave("price_vs_reviews_per_month.png", plot = p7, width = 8, height = 6)
 
-# Residual Analysis
-ggplot(data, aes(x = predict(model_reviews_per_month), y = resid(model_reviews_per_month))) +
+# Residual Analysis for Reviews Per Month
+p8 <- ggplot(data, aes(x = predict(model_reviews_per_month), y = resid(model_reviews_per_month))) +
   geom_point(alpha = 0.5, color = "blue") +
   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
   labs(title = "Residuals vs Fitted (Reviews Per Month)",
        x = "Fitted Values",
        y = "Residuals")
+p8
+ggsave("residuals_reviews_per_month.png", plot = p8, width = 8, height = 6)
 
-# Confidence Intervals and Hypothesis Testing
-display_conf_intervals(model_reviews_per_month, "Reviews Per Month")
-perform_hypothesis_testing(model_reviews_per_month, c("reviews_per_month"))
 
-# 4. Combined Reviews Model: Number of Reviews and Reviews Per Month
-model_reviews_combined <- lm(price ~ number_of_reviews + reviews_per_month, data = data)
-summary(model_reviews_combined)
-
-# Visualization
-ggplot(data, aes(x = predict(model_reviews_combined), y = price)) +
-  geom_point(alpha = 0.5, color = "blue") +
-  geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
-  labs(title = "Actual vs Predicted Prices (Combined Reviews)",
-       x = "Predicted Price",
-       y = "Actual Price")
-
-# Residual Analysis
-ggplot(data, aes(x = predict(model_reviews_combined), y = resid(model_reviews_combined))) +
-  geom_point(alpha = 0.5, color = "blue") +
-  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-  labs(title = "Residuals vs Fitted (Combined Reviews)",
-       x = "Fitted Values",
-       y = "Residuals")
-
-# Confidence Intervals and Hypothesis Testing
-display_conf_intervals(model_reviews_combined, "Combined Reviews")
-perform_hypothesis_testing(model_reviews_combined, c("number_of_reviews", "reviews_per_month"))
-
-# 5. Full Model: All Variables Together
-model_full <- lm(price ~ room_type + number_of_reviews + reviews_per_month + availability_365, data = data)
-summary(model_full)
-
-# Visualization
-data$predicted_price <- predict(model_full)
-ggplot(data, aes(x = predicted_price, y = price)) +
-  geom_point(alpha = 0.5, color = "blue") +
-  geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
-  labs(title = "Actual vs Predicted Prices (Full Model)",
-       x = "Predicted Price",
-       y = "Actual Price")
-
-# Residual Analysis
-ggplot(data, aes(x = predict(model_full), y = resid(model_full))) +
-  geom_point(alpha = 0.5, color = "blue") +
-  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-  labs(title = "Residuals vs Fitted (Full Model)",
-       x = "Fitted Values",
-       y = "Residuals")
-
-# Confidence Intervals and Hypothesis Testing
-display_conf_intervals(model_full, "Full")
-perform_hypothesis_testing(model_full, c("room_typePrivate room", "room_typeShared room", 
-                                         "number_of_reviews", "reviews_per_month", "availability_365"))

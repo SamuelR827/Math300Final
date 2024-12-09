@@ -1,0 +1,495 @@
+id,neighbourhood,room_type,price,number_of_reviews,reviews_per_month,calculated_host_listings_count,availability_365,row_number
+177421,Greenpoint,Entire home/apt,500,20,0.21,2,127,17
+414801,Clinton Hill,Entire home/apt,500,54,0.65,4,365,18
+60164,SoHo,Entire home/apt,500,94,0.99,1,329,14
+546573,Financial District,Entire home/apt,500,63,0.75,1,79,19
+61224,Chelsea,Entire home/apt,500,35,0.34,1,348,15
+494937,SoHo,Entire home/apt,499,63,0.76,1,26,21
+323706,Upper West Side,Entire home/apt,499,64,0.72,1,157,20
+255957,Nolita,Entire home/apt,495,25,0.27,2,338,23
+479002,Fort Greene,Entire home/apt,450,31,1.14,1,30,27
+162493,Williamsburg,Entire home/apt,450,37,0.79,1,15,26
+276317,Prospect Heights,Entire home/apt,402,89,0.97,1,340,29
+173742,Gramercy,Entire home/apt,400,105,1.13,1,304,31
+27659,South Slope,Entire home/apt,400,16,0.24,2,216,30
+443646,Upper West Side,Entire home/apt,395,39,0.45,1,50,33
+63693,East Village,Entire home/apt,390,143,1.38,2,316,34
+285492,Chelsea,Entire home/apt,385,63,0.71,1,364,35
+523123,South Slope,Entire home/apt,375,19,0.23,1,43,38
+45910,Ridgewood,Entire home/apt,350,10,0.11,5,365,40
+509989,Flatbush,Entire home/apt,349,169,2.08,1,344,51
+502429,South Slope,Entire home/apt,325,116,1.37,1,203,59
+26969,Williamsburg,Entire home/apt,325,324,3.01,1,107,54
+258688,West Village,Entire home/apt,325,46,0.5,1,20,56
+424192,Hell's Kitchen,Entire home/apt,325,18,0.21,1,364,57
+279093,Harlem,Entire home/apt,300,2,0.06,1,365,69
+224006,Harlem,Private room,300,6,0.08,2,83,66
+152263,Harlem,Entire home/apt,300,203,2.14,3,258,63
+552141,Lower East Side,Entire home/apt,300,45,0.62,1,111,75
+401836,Upper East Side,Entire home/apt,300,19,0.22,1,84,71
+262583,West Village,Entire home/apt,300,153,1.66,4,246,67
+295998,Upper West Side,Entire home/apt,300,36,0.47,1,29,70
+48719,Lower East Side,Entire home/apt,299,109,1.04,1,207,76
+328040,Midtown,Entire home/apt,299,19,0.27,1,101,79
+253842,Greenpoint,Private room,299,6,0.1,28,60,77
+161996,Harlem,Entire home/apt,295,227,2.33,1,247,82
+560078,East Village,Entire home/apt,295,85,1.02,1,261,84
+147586,Harlem,Entire home/apt,295,74,0.76,2,264,81
+118430,Chelsea,Private room,290,35,0.36,1,20,85
+227735,East Village,Entire home/apt,288,120,1.27,1,229,86
+19169,Lower East Side,Entire home/apt,285,70,0.62,1,328,87
+62925,Greenpoint,Entire home/apt,285,124,1.22,3,279,88
+243229,Bedford-Stuyvesant,Entire home/apt,280,5,0.05,1,365,89
+532749,Williamsburg,Entire home/apt,280,82,0.98,1,41,90
+530632,Crown Heights,Entire home/apt,275,2,0.1,1,357,97
+47926,Hell's Kitchen,Entire home/apt,275,41,0.38,1,299,93
+16595,Williamsburg,Entire home/apt,275,148,1.4,1,362,92
+406926,Nolita,Entire home/apt,269,81,0.93,1,122,99
+127387,Gowanus,Entire home/apt,260,3,0.03,1,316,103
+144087,Harlem,Entire home/apt,259,17,0.17,1,343,104
+155296,Williamsburg,Entire home/apt,255,39,0.5,1,89,105
+450577,Upper West Side,Entire home/apt,250,73,0.84,1,284,129
+398283,South Slope,Entire home/apt,250,17,0.46,1,5,127
+136493,Park Slope,Entire home/apt,250,18,0.21,1,18,117
+68765,Carroll Gardens,Entire home/apt,250,106,1.34,3,272,114
+258838,Arrochar,Entire home/apt,250,21,0.26,4,333,121
+525293,Concourse,Entire home/apt,250,119,1.41,1,339,132
+166006,Upper West Side,Entire home/apt,250,188,1.94,1,259,119
+270345,East Village,Entire home/apt,250,24,0.26,1,16,122
+146754,Windsor Terrace,Entire home/apt,250,52,0.72,1,188,118
+59709,Chinatown,Entire home/apt,250,18,0.18,2,265,113
+329310,Chinatown,Entire home/apt,250,9,0.1,1,190,126
+74404,Harlem,Entire home/apt,250,31,0.31,1,78,116
+71010,Washington Heights,Entire home/apt,250,32,0.43,2,276,115
+299078,SoHo,Entire home/apt,250,152,1.69,1,109,125
+40453,Upper East Side,Entire home/apt,250,4,0.08,1,365,111
+32100,Greenpoint,Entire home/apt,250,3,0.03,1,34,109
+81739,Greenpoint,Private room,249,2,0.02,28,60,135
+253839,Greenpoint,Private room,249,3,0.03,28,60,138
+103806,East Village,Entire home/apt,249,166,1.68,2,365,136
+496166,South Slope,Entire home/apt,249,12,0.27,1,26,139
+204065,Clinton Hill,Entire home/apt,248,58,0.61,6,199,140
+466277,Williamsburg,Entire home/apt,235,108,1.25,2,144,146
+212178,Theater District,Entire home/apt,230,179,1.88,1,44,148
+17037,East Village,Entire home/apt,230,49,0.43,1,116,147
+408983,Prospect-Lefferts Gardens,Entire home/apt,229,92,1.05,1,321,150
+14290,Williamsburg,Entire home/apt,228,82,0.7,1,140,152
+489365,Williamsburg,Entire home/apt,226,203,2.85,1,38,154
+533927,Chelsea,Entire home/apt,225,153,2.03,1,205,170
+27385,East Village,Entire home/apt,225,115,1.05,4,299,157
+2595,Midtown,Entire home/apt,225,45,0.38,2,355,155
+263888,Upper West Side,Entire home/apt,225,129,1.41,1,107,163
+134934,Williamsburg,Entire home/apt,225,22,0.38,1,52,161
+393094,Financial District,Entire home/apt,225,27,0.31,1,169,165
+112359,Upper East Side,Entire home/apt,225,56,0.57,1,312,160
+16974,East Harlem,Entire home/apt,225,190,1.64,1,215,156
+60457,Greenwich Village,Entire home/apt,225,10,0.1,1,91,159
+228496,West Village,Entire home/apt,225,13,0.15,1,83,162
+530431,Harlem,Entire home/apt,220,194,2.42,1,338,176
+500845,East Village,Entire home/apt,220,162,1.88,1,341,175
+289288,East Village,Entire home/apt,219,129,1.42,1,220,179
+190968,Prospect Heights,Entire home/apt,215,33,0.35,1,156,182
+114229,Lower East Side,Entire home/apt,211,52,0.6,3,361,186
+470090,Lower East Side,Entire home/apt,210,230,2.65,1,319,187
+550777,Upper West Side,Entire home/apt,210,25,0.3,1,347,188
+291524,Upper West Side,Entire home/apt,209,14,0.16,1,205,189
+504362,Prospect Heights,Entire home/apt,209,56,0.65,1,160,190
+435946,Financial District,Entire home/apt,208,100,1.14,1,310,191
+167013,Chelsea,Entire home/apt,205,3,0.04,2,76,193
+241862,West Village,Entire home/apt,200,37,0.39,1,257,206
+378460,Hell's Kitchen,Entire home/apt,200,13,0.15,1,327,207
+461050,Williamsburg,Entire home/apt,200,17,0.2,1,67,210
+5099,Murray Hill,Entire home/apt,200,74,0.59,1,129,194
+121687,Williamsburg,Entire home/apt,200,29,0.31,1,36,203
+253800,Greenpoint,Entire home/apt,199,24,0.26,28,60,229
+181972,Harlem,Entire home/apt,199,111,1.17,1,12,219
+253475,Greenpoint,Entire home/apt,199,59,0.66,28,60,228
+253815,Greenpoint,Entire home/apt,199,39,0.44,28,84,233
+219818,Lower East Side,Entire home/apt,199,14,0.15,2,158,222
+182095,West Village,Entire home/apt,199,66,0.69,2,89,220
+114123,South Slope,Entire home/apt,199,27,0.28,2,223,218
+26954,Kips Bay,Entire home/apt,199,38,0.38,1,260,214
+292121,Hell's Kitchen,Entire home/apt,199,4,0.07,1,200,234
+294490,Greenpoint,Entire home/apt,199,54,0.61,28,60,240
+294280,Greenpoint,Entire home/apt,199,23,0.26,28,81,239
+294263,Greenpoint,Entire home/apt,199,89,1.06,28,62,238
+354095,East Village,Entire home/apt,199,41,0.47,1,36,242
+163809,Harlem,Entire home/apt,198,42,0.44,2,234,243
+33014,East Village,Entire home/apt,195,30,0.28,1,248,245
+206772,Williamsburg,Entire home/apt,195,31,0.33,1,263,249
+56525,Greenpoint,Entire home/apt,195,69,0.65,1,58,246
+235951,Midtown,Entire home/apt,190,136,1.45,1,120,262
+66974,Gowanus,Entire home/apt,190,69,0.79,2,258,257
+103161,Williamsburg,Entire home/apt,190,124,1.76,1,359,258
+66008,Carroll Gardens,Entire home/apt,190,51,0.57,1,288,256
+564447,Hell's Kitchen,Entire home/apt,190,195,2.83,1,69,264
+120362,Williamsburg,Entire home/apt,190,50,0.51,1,331,259
+177606,Kips Bay,Entire home/apt,189,90,0.95,1,303,266
+444171,Bedford-Stuyvesant,Entire home/apt,189,7,0.1,2,303,269
+347865,East Village,Entire home/apt,189,265,2.99,2,355,268
+541725,Williamsburg,Entire home/apt,189,33,0.44,2,1,270
+320876,South Slope,Entire home/apt,185,215,2.42,1,291,277
+82928,Bedford-Stuyvesant,Entire home/apt,185,46,1.07,1,248,272
+211078,Greenpoint,Entire home/apt,185,228,2.39,3,1,275
+510218,Upper West Side,Entire home/apt,185,165,1.92,1,259,278
+29683,East Village,Entire home/apt,185,73,0.66,1,209,271
+140973,East Village,Entire home/apt,185,69,0.71,1,233,273
+552519,Crown Heights,Entire home/apt,185,215,2.55,3,348,280
+253590,Upper West Side,Entire home/apt,185,16,0.23,1,261,276
+283090,East Village,Entire home/apt,180,24,0.26,2,125,285
+570750,Crown Heights,Entire home/apt,180,221,2.6,1,264,289
+245574,Bedford-Stuyvesant,Entire home/apt,180,181,1.92,1,280,284
+9657,East Village,Entire home/apt,180,29,0.24,1,67,281
+236671,Williamsburg,Entire home/apt,180,125,1.36,3,248,283
+233189,Hell's Kitchen,Entire home/apt,179,83,0.88,1,292,293
+253846,Greenpoint,Private room,179,4,0.05,28,81,294
+84010,Greenpoint,Private room,179,13,0.14,28,81,291
+503722,Williamsburg,Entire home/apt,175,15,0.29,1,64,309
+62891,East Village,Entire home/apt,175,185,1.78,2,326,300
+363320,Harlem,Private room,175,6,0.09,4,10,308
+107630,Greenpoint,Entire home/apt,175,248,2.53,3,274,303
+141984,Nolita,Entire home/apt,175,68,0.69,1,277,304
+65834,Park Slope,Entire home/apt,175,11,0.11,1,246,301
+287839,Fort Greene,Entire home/apt,175,35,0.4,1,289,307
+153780,East Village,Private room,175,175,1.8,1,236,305
+60673,Harlem,Private room,175,1,0.11,1,365,299
+168810,Upper West Side,Entire home/apt,175,11,0.12,1,358,306
+47362,Bedford-Stuyvesant,Entire home/apt,175,30,0.29,1,364,298
+522081,Chelsea,Private room,170,183,2.19,2,254,319
+44288,West Village,Entire home/apt,170,86,0.8,1,246,314
+135465,Fort Greene,Entire home/apt,170,86,0.91,2,286,315
+171776,Harlem,Private room,170,17,0.18,2,88,316
+76761,South Slope,Entire home/apt,169,398,3.97,3,182,322
+82638,East Village,Entire home/apt,169,240,2.4,1,276,323
+96471,Clinton Hill,Private room,165,11,0.11,3,365,332
+42729,Carroll Gardens,Entire home/apt,165,150,1.4,3,342,329
+131154,Greenpoint,Entire home/apt,165,175,1.79,1,139,335
+80924,Park Slope,Entire home/apt,165,34,0.51,2,189,331
+275976,Bedford-Stuyvesant,Entire home/apt,165,204,2.31,1,80,339
+44506,Harlem,Entire home/apt,165,80,0.75,3,231,330
+121861,Park Slope,Entire home/apt,165,23,0.23,2,7,334
+112100,Crown Heights,Entire home/apt,165,3,0.03,1,157,333
+413876,Financial District,Entire home/apt,160,36,0.57,1,365,351
+200955,East Village,Entire home/apt,160,25,0.26,1,46,348
+57297,Cobble Hill,Entire home/apt,159,222,2.12,1,279,354
+391955,Columbia St,Entire home/apt,159,106,1.22,1,34,356
+293837,Williamsburg,Entire home/apt,157,54,0.66,2,12,357
+263232,Harlem,Entire home/apt,155,1,0.18,1,5,360
+435909,West Village,Entire home/apt,151,19,0.22,1,249,365
+568743,East Village,Entire home/apt,151,214,2.53,3,256,366
+45393,West Village,Entire home/apt,150,38,0.36,1,225,375
+75635,Lower East Side,Entire home/apt,150,286,2.81,1,191,380
+69894,Upper West Side,Entire home/apt,150,48,0.55,1,35,379
+117425,Brooklyn Heights,Entire home/apt,150,95,0.96,1,281,383
+205043,Theater District,Private room,150,330,7.14,1,111,385
+5238,Chinatown,Entire home/apt,150,160,1.33,4,188,367
+12343,Harlem,Entire home/apt,150,97,0.84,1,309,369
+9357,Hell's Kitchen,Entire home/apt,150,58,0.49,1,75,368
+28907,Upper East Side,Entire home/apt,150,21,0.19,1,189,373
+514457,Bedford-Stuyvesant,Entire home/apt,150,10,0.17,2,185,395
+46544,Park Slope,Entire home/apt,150,52,0.5,1,18,376
+59014,Lower East Side,Entire home/apt,150,41,0.39,1,244,377
+86215,Lower East Side,Entire home/apt,150,151,1.51,2,52,382
+438513,Prospect-Lefferts Gardens,Entire home/apt,150,87,1,1,73,391
+310220,Greenpoint,Private room,149,65,0.73,1,364,399
+197155,Hell's Kitchen,Entire home/apt,149,122,1.29,1,20,398
+220946,East Village,Entire home/apt,146,142,1.5,1,166,401
+350525,Crown Heights,Entire home/apt,145,46,0.52,1,38,408
+263005,Fort Greene,Entire home/apt,145,110,1.2,1,15,407
+208889,Bedford-Stuyvesant,Entire home/apt,145,30,0.32,3,11,405
+232618,East Harlem,Entire home/apt,145,102,1.52,1,308,406
+435776,Upper East Side,Private room,145,2,0.09,1,365,411
+14314,Greenpoint,Entire home/apt,144,328,2.82,1,234,413
+452541,Windsor Terrace,Entire home/apt,142,120,1.4,1,222,414
+7322,Chelsea,Private room,140,260,2.12,1,12,418
+60948,East Harlem,Entire home/apt,140,135,1.3,3,192,426
+6848,Williamsburg,Entire home/apt,140,148,1.2,1,46,417
+55467,Williamsburg,Entire home/apt,140,253,3.04,1,125,423
+251277,Upper West Side,Private room,140,176,1.89,1,300,429
+53470,Ridgewood,Private room,140,6,0.06,5,365,422
+66451,Williamsburg,Entire home/apt,140,9,0.11,1,254,427
+164989,SoHo,Private room,140,54,0.56,1,221,428
+158955,Williamsburg,Entire home/apt,139,385,4,1,222,433
+258397,Park Slope,Entire home/apt,139,135,1.45,1,204,435
+84659,East Village,Entire home/apt,139,388,3.88,1,142,432
+434792,Gowanus,Entire home/apt,138,106,1.22,1,189,438
+228317,Bedford-Stuyvesant,Entire home/apt,135,82,0.87,1,273,450
+5295,Upper West Side,Entire home/apt,135,53,0.43,1,6,439
+548133,Clinton Hill,Entire home/apt,135,28,0.4,1,211,460
+106647,Bedford-Stuyvesant,Entire home/apt,135,86,0.87,1,102,449
+396636,Harlem,Entire home/apt,135,38,0.44,1,253,457
+50447,South Slope,Entire home/apt,135,151,1.43,3,162,443
+59642,Greenpoint,Entire home/apt,135,69,0.67,1,12,445
+478385,Kips Bay,Entire home/apt,135,134,1.56,1,236,458
+32037,Clinton Hill,Private room,135,84,0.77,3,365,441
+573795,East Flatbush,Entire home/apt,133,104,1.32,1,338,461
+503790,West Village,Entire home/apt,130,22,0.28,1,77,486
+268392,Harlem,Entire home/apt,130,35,0.42,1,41,481
+55668,NoHo,Private room,130,115,1.17,1,75,467
+235651,West Village,Private room,130,80,0.86,2,332,479
+8024,Park Slope,Private room,130,130,1.09,6,347,463
+62427,East Village,Entire home/apt,130,56,0.58,1,56,469
+19282,Flatbush,Entire home/apt,130,16,0.15,1,38,465
+133025,Murray Hill,Private room,130,105,1.07,1,193,474
+12937,Long Island City,Private room,130,248,2.25,1,215,464
+281851,Harlem,Private room,130,107,2.38,1,304,482
+65615,Williamsburg,Entire home/apt,130,49,0.48,1,152,470
+98663,Chelsea,Entire home/apt,130,19,0.19,1,189,472
+31130,Hell's Kitchen,Private room,130,50,0.45,3,234,466
+83446,Fort Greene,Entire home/apt,130,5,0.05,1,135,471
+298073,Williamsburg,Entire home/apt,130,23,0.25,1,25,483
+353317,Chinatown,Entire home/apt,129,132,1.49,1,171,490
+151199,Astoria,Entire home/apt,129,414,4.34,1,245,488
+276216,Sunset Park,Entire home/apt,127,1,0.03,1,365,493
+412061,Crown Heights,Entire home/apt,125,58,0.67,2,212,518
+36133,Williamsburg,Private room,125,155,1.61,1,1,498
+257097,Bedford-Stuyvesant,Entire home/apt,125,31,0.33,1,218,509
+249618,Washington Heights,Private room,125,4,0.06,1,364,507
+282977,Park Slope,Private room,125,232,2.52,1,303,512
+336220,Harlem,Private room,125,202,2.29,1,217,513
+397034,Upper West Side,Private room,125,25,0.28,1,311,516
+182177,Allerton,Entire home/apt,125,271,2.84,2,347,506
+98330,Kips Bay,Entire home/apt,125,1,0.01,3,181,504
+68900,Greenpoint,Private room,125,6,0.1,1,325,502
+380416,Park Slope,Entire home/apt,125,23,0.67,2,262,515
+250536,Harlem,Private room,125,11,0.12,2,365,508
+22911,Bedford-Stuyvesant,Entire home/apt,125,139,1.23,2,311,494
+99085,Fort Greene,Entire home/apt,123,15,0.15,1,189,527
+404502,Williamsburg,Private room,123,269,3.09,3,158,528
+67397,Morningside Heights,Private room,122,93,0.93,1,246,529
+12299,South Slope,Entire home/apt,120,15,0.39,1,345,534
+498052,Williamsburg,Private room,120,124,1.46,1,292,557
+141154,Boerum Hill,Entire home/apt,120,232,2.41,1,221,545
+46911,Prospect Heights,Private room,120,51,0.48,3,250,538
+79782,Williamsburg,Private room,120,76,0.76,6,343,541
+287481,Williamsburg,Entire home/apt,120,66,0.72,2,17,550
+573870,Upper West Side,Entire home/apt,120,18,0.22,5,337,559
+367810,Greenpoint,Private room,120,3,0.09,1,242,554
+8490,Bedford-Stuyvesant,Entire home/apt,120,88,0.73,2,233,533
+179670,Lower East Side,Private room,120,99,1.04,1,345,546
+26785,South Slope,Entire home/apt,120,467,4.22,2,192,536
+205867,Williamsburg,Entire home/apt,120,87,0.99,1,263,548
+524111,East Village,Entire home/apt,118,141,1.66,1,13,562
+74680,Astoria,Entire home/apt,115,198,2.01,1,257,568
+568684,Bushwick,Entire home/apt,115,6,0.09,1,365,575
+36442,Prospect Heights,Entire home/apt,115,4,0.05,1,269,566
+65019,Upper West Side,Entire home/apt,115,210,2.1,1,261,567
+321136,Washington Heights,Entire home/apt,115,18,0.21,1,31,571
+44229,Fort Greene,Private room,110,213,2,2,321,581
+14991,Lower East Side,Private room,110,19,0.17,1,301,579
+233662,Midtown,Private room,110,61,0.65,1,264,590
+12940,Bedford-Stuyvesant,Entire home/apt,110,61,0.52,1,265,578
+318021,Harlem,Private room,110,47,0.57,1,248,595
+543792,Ridgewood,Entire home/apt,110,107,1.25,1,276,600
+436619,East Village,Private room,110,64,0.76,1,74,598
+219066,Bensonhurst,Entire home/apt,110,24,0.26,1,183,587
+471914,Prospect-Lefferts Gardens,Private room,110,12,0.16,1,330,599
+568661,Bushwick,Entire home/apt,110,32,0.4,1,330,601
+232612,Bedford-Stuyvesant,Entire home/apt,110,305,3.24,1,231,589
+19159,Harlem,Entire home/apt,110,54,0.49,1,209,580
+274743,Upper East Side,Entire home/apt,110,1,0.02,1,275,593
+274329,Bushwick,Entire home/apt,110,115,1.75,2,28,592
+118061,Bedford-Stuyvesant,Entire home/apt,110,70,0.75,1,283,584
+324517,Upper East Side,Private room,109,66,0.94,1,353,605
+68099,Upper West Side,Private room,109,104,1.05,2,364,602
+566712,East Village,Private room,107,115,1.4,1,85,608
+327778,Kips Bay,Entire home/apt,106,12,0.14,1,271,609
+437352,Park Slope,Entire home/apt,105,15,0.17,1,219,619
+386744,Upper East Side,Private room,105,93,1.06,1,70,618
+17747,Clinton Hill,Private room,105,105,0.92,1,304,610
+195989,Park Slope,Private room,105,211,2.21,2,252,617
+484728,Fort Hamilton,Entire home/apt,105,3,0.05,1,30,620
+63610,Eastchester,Entire home/apt,105,38,0.5,13,365,615
+30927,Lower East Side,Entire home/apt,105,32,0.29,1,16,613
+393016,Hell's Kitchen,Private room,104,133,1.51,1,147,621
+504437,Lower East Side,Entire home/apt,104,57,0.7,1,6,622
+535352,Upper West Side,Entire home/apt,102,36,0.5,1,21,624
+261344,Financial District,Private room,101,51,0.55,1,307,626
+393682,Nolita,Private room,100,61,0.7,1,188,645
+176653,East Village,Private room,100,49,0.51,2,43,632
+199312,Williamsburg,Private room,100,273,2.85,1,254,634
+217580,Fort Hamilton,Entire home/apt,100,7,0.08,1,241,636
+312429,Prospect Heights,Private room,100,61,0.86,1,90,644
+283272,Williamsburg,Entire home/apt,100,5,0.06,2,6,641
+64107,Crown Heights,Private room,100,279,2.69,1,301,630
+105510,Crown Heights,Entire home/apt,100,15,0.16,5,282,631
+409293,East Harlem,Private room,100,67,0.76,3,345,646
+449680,Longwood,Entire home/apt,100,82,0.96,1,63,648
+54508,Prospect Heights,Private room,100,226,2.12,3,250,628
+279969,Bedford-Stuyvesant,Entire home/apt,100,63,0.72,2,5,640
+204833,Williamsburg,Private room,100,8,0.09,1,249,635
+447766,Kips Bay,Private room,100,1,0.02,1,6,647
+482765,Fort Greene,Private room,100,112,1.3,2,12,651
+490278,Midtown,Entire home/apt,99,30,0.35,1,317,677
+422040,Upper West Side,Private room,99,27,0.31,1,189,673
+115678,Harlem,Entire home/apt,99,320,3.23,1,220,660
+454763,Inwood,Entire home/apt,99,11,0.18,1,249,675
+267708,East Harlem,Private room,99,25,0.96,2,127,668
+265036,Crown Heights,Private room,99,20,0.59,1,98,667
+309342,Upper West Side,Private room,99,14,0.22,1,365,670
+163814,East Village,Entire home/apt,99,280,2.92,3,257,662
+501693,Upper West Side,Private room,99,280,3.51,1,246,678
+189135,Hell's Kitchen,Private room,99,89,1,1,353,664
+27531,South Slope,Private room,99,354,3.2,3,20,654
+274062,Harlem,Private room,99,54,0.88,1,50,669
+313890,Lower East Side,Entire home/apt,99,13,0.34,9,289,671
+187566,Bedford-Stuyvesant,Entire home/apt,99,187,1.97,2,287,663
+516452,Fort Greene,Entire home/apt,99,5,0.06,1,242,679
+424667,Hell's Kitchen,Private room,99,134,1.54,1,265,674
+21794,Chelsea,Private room,98,30,0.27,2,364,681
+53469,Middle Village,Entire home/apt,98,33,0.31,5,240,682
+20755,Clinton Hill,Private room,98,16,0.2,6,185,680
+132516,Forest Hills,Entire home/apt,97,28,1.21,3,209,684
+253332,Sunset Park,Entire home/apt,96,13,0.14,1,204,687
+18590,Fort Greene,Private room,95,143,1.28,1,132,689
+66275,Lower East Side,Private room,95,109,1.11,3,364,691
+84905,Two Bridges,Private room,95,223,2.22,2,60,692
+204959,Chinatown,Private room,95,172,1.84,2,64,696
+571564,Crown Heights,Private room,95,123,1.47,3,359,701
+341525,Hell's Kitchen,Private room,95,62,0.76,2,80,699
+19319,Lower East Side,Private room,94,94,0.84,1,188,702
+271083,Prospect-Lefferts Gardens,Entire home/apt,93,115,1.25,1,312,705
+60666,Harlem,Private room,92,189,1.82,5,253,707
+173151,Greenpoint,Private room,91,241,2.49,1,287,710
+282863,Gowanus,Entire home/apt,91,69,0.76,1,265,711
+516791,Kensington,Entire home/apt,90,33,0.39,1,269,729
+400466,Prospect-Lefferts Gardens,Entire home/apt,90,32,0.37,1,50,724
+526942,Upper East Side,Private room,90,3,0.04,1,128,731
+89621,Bedford-Stuyvesant,Entire home/apt,90,218,2.26,4,324,717
+518960,Harlem,Entire home/apt,90,266,3.17,1,150,730
+282341,Kensington,Entire home/apt,90,3,0.05,1,286,719
+399946,Lower East Side,Private room,90,67,0.77,1,301,723
+419373,Bedford-Stuyvesant,Entire home/apt,90,206,2.4,1,236,725
+303345,East Harlem,Entire home/apt,90,51,0.57,1,311,721
+64707,Little Italy,Entire home/apt,90,1,0.16,1,14,714
+292047,West Village,Private room,90,209,2.38,1,236,720
+194154,Upper West Side,Private room,89,35,0.37,1,180,739
+3831,Clinton Hill,Entire home/apt,89,270,4.64,1,194,733
+29628,Clinton Hill,Private room,89,260,2.35,1,278,737
+172870,Harlem,Private room,89,43,0.47,2,247,738
+5803,South Slope,Private room,89,167,1.34,3,314,734
+343971,Harlem,Private room,89,56,0.64,1,365,744
+476570,East Village,Entire home/apt,89,70,0.83,6,4,746
+471712,Morningside Heights,Private room,89,69,0.81,1,80,745
+329385,Inwood,Private room,87,46,0.62,2,310,750
+311343,East Harlem,Private room,86,216,2.44,1,250,752
+246134,Crown Heights,Private room,85,5,0.05,1,281,765
+276482,Harlem,Private room,85,130,1.42,2,97,768
+11708,Bushwick,Entire home/apt,85,231,1.96,2,22,755
+397420,Harlem,Private room,85,6,0.07,1,363,770
+20611,Williamsburg,Private room,85,174,1.54,4,288,756
+113945,Hell's Kitchen,Private room,85,116,1.17,1,174,760
+374548,Bedford-Stuyvesant,Entire home/apt,85,268,3.04,2,202,769
+15385,Williamsburg,Private room,80,42,0.38,1,263,780
+230321,Bedford-Stuyvesant,Entire home/apt,80,35,0.4,1,36,791
+8025,Park Slope,Private room,80,39,0.37,6,364,777
+566911,Bedford-Stuyvesant,Entire home/apt,80,42,0.49,1,245,801
+212109,West Village,Private room,80,9,0.2,1,338,787
+13808,Bedford-Stuyvesant,Private room,80,112,1.01,3,251,779
+214917,Emerson Hill,Private room,80,2,0.05,1,158,788
+159815,Bedford-Stuyvesant,Private room,80,39,0.41,3,218,786
+449660,Windsor Terrace,Private room,80,118,1.35,1,353,795
+482365,Hell's Kitchen,Entire home/apt,80,32,0.37,7,365,798
+227715,Bedford-Stuyvesant,Entire home/apt,80,234,2.47,4,308,790
+13394,Fort Greene,Private room,80,135,1.16,2,192,778
+116940,Crown Heights,Entire home/apt,80,225,2.27,4,315,785
+246916,Elmhurst,Entire home/apt,79,60,0.64,2,297,807
+5178,Hell's Kitchen,Private room,79,430,3.47,1,220,802
+544131,Greenwich Village,Private room,79,87,1.02,1,30,811
+333189,Williamsburg,Private room,79,42,0.47,2,52,809
+31902,Flatlands,Private room,77,2,0.02,1,178,813
+564751,Upper West Side,Shared room,76,158,1.91,3,324,818
+31994,Clinton Hill,Private room,76,426,3.89,3,275,817
+65813,Harlem,Private room,75,20,0.26,1,364,822
+193393,Sunnyside,Private room,75,160,1.68,1,65,827
+154934,Harlem,Private room,75,38,0.42,3,365,823
+407469,Bushwick,Private room,75,112,1.28,8,330,843
+166541,Washington Heights,Private room,75,34,0.35,1,222,826
+456526,Harlem,Private room,75,36,1.76,1,47,846
+310325,Harlem,Private room,75,33,0.39,3,301,836
+234870,Long Island City,Private room,75,65,0.74,3,219,830
+409666,Brighton Beach,Entire home/apt,75,8,0.1,1,2,844
+448048,Jackson Heights,Private room,75,30,0.37,3,180,845
+333323,Hell's Kitchen,Private room,75,118,2.11,3,312,840
+65268,Bedford-Stuyvesant,Private room,75,64,0.67,1,68,821
+239733,Ditmars Steinway,Entire home/apt,75,49,0.53,1,313,831
+296345,Williamsburg,Private room,75,98,1.07,2,264,834
+310524,Bedford-Stuyvesant,Private room,75,13,0.15,1,298,838
+519310,Woodside,Private room,75,251,2.92,2,317,847
+199195,Harlem,Private room,75,50,0.65,2,38,828
+387324,Kips Bay,Private room,74,15,0.17,1,90,848
+506121,East Village,Private room,72,451,5.26,2,13,851
+364275,Williamsburg,Private room,72,156,1.8,1,110,850
+80493,East Village,Private room,71,182,1.81,1,200,853
+245504,Inwood,Private room,71,229,2.45,1,26,854
+105469,Rockaway Beach,Private room,70,13,0.13,1,335,863
+453094,Clinton Hill,Private room,70,339,3.88,3,333,868
+10452,Bedford-Stuyvesant,Private room,70,74,0.66,2,269,855
+206957,Sheepshead Bay,Entire home/apt,70,128,1.34,2,90,865
+182649,Williamsburg,Private room,70,227,2.4,1,37,864
+42882,St. George,Private room,70,166,1.66,1,312,859
+64277,Bedford-Stuyvesant,Private room,70,18,0.22,4,189,861
+39282,Williamsburg,Private room,69,202,1.86,2,53,872
+55959,Williamsburg,Private room,69,82,1.13,2,60,873
+224004,Harlem,Private room,69,59,0.63,2,86,875
+448049,Jackson Heights,Private room,69,55,0.64,3,318,877
+197753,Harlem,Private room,68,295,3.9,2,188,882
+64837,East Village,Private room,68,203,1.96,2,86,881
+12192,East Village,Private room,68,245,2.08,2,96,880
+100002,Washington Heights,Private room,67,136,1.37,1,296,885
+306799,Bushwick,Private room,65,123,1.42,1,46,897
+550653,Windsor Terrace,Private room,65,6,0.32,1,311,899
+20724,Bushwick,Private room,65,24,0.28,1,317,887
+359982,Williamsburg,Private room,65,30,0.34,1,139,898
+17693,Washington Heights,Private room,65,49,1.6,2,336,886
+289958,Long Island City,Private room,65,5,0.06,1,362,896
+70128,East Village,Private room,65,52,0.63,1,5,890
+169002,Harlem,Private room,65,41,0.43,2,59,893
+23501,Washington Heights,Private room,65,68,0.6,1,312,888
+193333,Williamsburg,Private room,65,52,0.54,1,276,894
+115535,Harlem,Private room,65,35,0.35,1,283,892
+257787,Williamsburg,Private room,64,247,2.65,2,117,902
+139624,Crown Heights,Entire home/apt,64,70,0.73,1,3,901
+20299,East Village,Private room,60,194,1.73,1,26,904
+272738,Williamsburg,Private room,60,35,0.38,2,161,914
+64365,Crown Heights,Private room,60,227,2.27,2,287,908
+271128,Bedford-Stuyvesant,Private room,60,9,0.19,2,33,912
+8505,Windsor Terrace,Private room,60,19,1.37,2,85,903
+22918,Harlem,Private room,60,11,0.87,3,219,905
+319724,Williamsburg,Private room,59,207,2.29,2,284,920
+310272,Clifton,Private room,59,50,0.56,1,352,919
+26362,Hell's Kitchen,Private room,59,334,3,2,279,916
+63299,Williamsburg,Private room,59,181,1.77,2,15,917
+436824,Harlem,Private room,58,17,0.31,2,289,921
+113265,Crown Heights,Private room,55,247,2.51,2,275,926
+152259,Harlem,Private room,55,119,1.22,5,333,927
+233638,Ridgewood,Private room,55,19,0.25,1,311,929
+9782,Greenpoint,Private room,55,197,1.65,3,284,923
+439750,Williamsburg,Private room,55,10,0.14,1,97,933
+483414,Bedford-Stuyvesant,Private room,55,22,0.26,4,297,937
+470370,Crown Heights,Private room,55,101,1.19,4,170,936
+577324,Ditmars Steinway,Entire home/apt,54,198,2.33,1,80,940
+254131,Jackson Heights,Private room,54,56,0.66,3,365,939
+9704,Harlem,Private room,52,88,1.42,1,255,941
+311356,Ridgewood,Private room,52,98,1.09,1,326,943
+100184,Queens Village,Private room,50,43,0.45,1,88,948
+292266,Bushwick,Private room,50,17,0.19,2,74,957
+455734,Inwood,Entire home/apt,50,123,1.47,1,21,958
+135393,East Flatbush,Private room,50,263,2.69,2,136,949
+206071,Concourse Village,Private room,50,258,2.7,2,276,951
+230854,Concourse,Private room,50,235,2.49,2,271,953
+9783,Harlem,Private room,50,273,2.37,3,359,946
+195123,Washington Heights,Private room,50,225,2.35,1,343,950
+319798,Bay Ridge,Private room,49,72,0.81,2,343,964
+257568,Cypress Hills,Private room,48,53,0.57,2,1,967
+163836,Greenpoint,Private room,46,86,0.89,3,350,968
+270139,Bushwick,Private room,45,21,0.29,3,88,971
+506575,Morris Heights,Private room,45,190,2.21,2,329,974
+391948,Ozone Park,Shared room,45,8,0.11,2,364,972
+34760,Fort Greene,Private room,44,27,1.05,5,280,976
+195233,Prospect-Lefferts Gardens,Private room,43,401,6.62,2,43,977
+245544,Kingsbridge,Private room,42,108,1.36,2,302,981
+213272,Bushwick,Private room,40,1,0.37,1,5,985
+498120,Allerton,Private room,35,2,0.17,1,90,995
+165824,Sunnyside,Private room,33,31,0.32,3,161,997
+375249,Graniteville,Private room,20,80,0.92,1,226,998
