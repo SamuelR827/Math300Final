@@ -1,0 +1,194 @@
+Descriptive Statistics:
+       id         neighbourhood       room_type             price    
+ Min.   :  2595   Length:494         Length:494         Min.   : 20  
+ 1st Qu.: 68799   Class :character   Class :character   1st Qu.: 89  
+ Median :218323   Mode  :character   Mode  :character   Median :125  
+ Mean   :232586                                         Mean   :149  
+ 3rd Qu.:358510                                         3rd Qu.:190  
+ Max.   :577324                                         Max.   :500  
+ number_of_reviews reviews_per_month calculated_host_listings_count availability_365
+ Min.   :  1.00    Min.   :0.010     Min.   : 1.000                 Min.   :  1.0   
+ 1st Qu.: 25.00    1st Qu.:0.310     1st Qu.: 1.000                 1st Qu.: 85.0   
+ Median : 63.00    Median :0.720     Median : 1.000                 Median :227.5   
+ Mean   : 95.25    Mean   :1.057     Mean   : 2.255                 Mean   :202.1   
+ 3rd Qu.:136.00    3rd Qu.:1.498     3rd Qu.: 2.000                 3rd Qu.:301.8   
+ Max.   :467.00    Max.   :7.140     Max.   :28.000                 Max.   :365.0   
+   row_number   
+ Min.   : 14.0  
+ 1st Qu.:262.5  
+ Median :506.5  
+ Mean   :503.1  
+ 3rd Qu.:744.8  
+ Max.   :998.0  
+
+Regression Model for Availability:
+
+Call:
+lm(formula = price ~ availability_365, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-128.62  -61.61  -22.15   41.90  353.86 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      152.63957    8.00161  19.076   <2e-16 ***
+availability_365  -0.01780    0.03431  -0.519    0.604    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 88.74 on 492 degrees of freedom
+Multiple R-squared:  0.0005466,	Adjusted R-squared:  -0.001485 
+F-statistic: 0.2691 on 1 and 492 DF,  p-value: 0.6042
+
+
+Confidence Intervals for Availability Model:
+                       2.5 %       97.5 %
+(Intercept)      136.9180177 168.36111260
+availability_365  -0.0851985   0.04960834
+
+P-value for availability_365 :  0.604187 
+availability_365 does not have a significant effect on Price (fail to reject H0).
+
+Regression Model for Number of Reviews:
+
+Call:
+lm(formula = price ~ number_of_reviews, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-131.26  -61.85  -22.80   39.94  350.78 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       162.86749    5.67616   28.69  < 2e-16 ***
+number_of_reviews  -0.14515    0.04282   -3.39 0.000756 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 87.74 on 492 degrees of freedom
+Multiple R-squared:  0.02282,	Adjusted R-squared:  0.02083 
+F-statistic: 11.49 on 1 and 492 DF,  p-value: 0.000756
+
+
+Confidence Intervals for Number of Reviews Model:
+                        2.5 %       97.5 %
+(Intercept)       151.7149771 174.02000170
+number_of_reviews  -0.2292784  -0.06101294
+
+P-value for number_of_reviews :  0.0007560218 
+number_of_reviews has a significant effect on Price (reject H0).
+
+Regression Model for Reviews Per Month:
+
+Call:
+lm(formula = price ~ reviews_per_month, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-130.86  -61.83  -22.55   39.64  350.07 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        163.051      5.714  28.535  < 2e-16 ***
+reviews_per_month  -13.250      3.908  -3.391 0.000753 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 87.74 on 492 degrees of freedom
+Multiple R-squared:  0.02284,	Adjusted R-squared:  0.02085 
+F-statistic:  11.5 on 1 and 492 DF,  p-value: 0.0007526
+
+
+Confidence Intervals for Reviews Per Month Model:
+                      2.5 %     97.5 %
+(Intercept)       151.82421 174.278298
+reviews_per_month -20.92772  -5.572693
+
+P-value for reviews_per_month :  0.0007526023 
+reviews_per_month has a significant effect on Price (reject H0).
+
+Regression Model for Combined Reviews:
+
+Call:
+lm(formula = price ~ number_of_reviews + reviews_per_month, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-131.10  -62.07  -23.08   39.76  350.41 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       163.29068    5.73699  28.463   <2e-16 ***
+number_of_reviews  -0.07374    0.14231  -0.518    0.605    
+reviews_per_month  -6.83358   12.98669  -0.526    0.599    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 87.81 on 491 degrees of freedom
+Multiple R-squared:  0.02337,	Adjusted R-squared:  0.01939 
+F-statistic: 5.875 on 2 and 491 DF,  p-value: 0.00301
+
+
+Confidence Intervals for Combined Reviews Model:
+                        2.5 %      97.5 %
+(Intercept)       152.0185985 174.5627619
+number_of_reviews  -0.3533513   0.2058769
+reviews_per_month -32.3499219  18.6827719
+
+P-value for number_of_reviews :  0.6045937 
+number_of_reviews does not have a significant effect on Price (fail to reject H0).
+
+P-value for reviews_per_month :  0.598988 
+reviews_per_month does not have a significant effect on Price (fail to reject H0).
+
+Regression Model for Full Model:
+
+Call:
+lm(formula = price ~ room_type + number_of_reviews + reviews_per_month + 
+    availability_365, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-131.10  -44.09  -10.20   23.32  311.84 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            192.77193    7.81538  24.666   <2e-16 ***
+room_typePrivate room  -94.24892    6.92352 -13.613   <2e-16 ***
+room_typeShared room  -132.15292   53.28340  -2.480   0.0135 *  
+number_of_reviews       -0.12217    0.12174  -1.004   0.3161    
+reviews_per_month        1.94525   11.11441   0.175   0.8611    
+availability_365         0.02342    0.02922   0.801   0.4232    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 74.81 on 488 degrees of freedom
+Multiple R-squared:  0.2953,	Adjusted R-squared:  0.2881 
+F-statistic:  40.9 on 5 and 488 DF,  p-value: < 2.2e-16
+
+
+Confidence Intervals for Full Model:
+                              2.5 %       97.5 %
+(Intercept)            177.41598020 208.12788598
+room_typePrivate room -107.85250175 -80.64533494
+room_typeShared room  -236.84612444 -27.45970957
+number_of_reviews       -0.36137974   0.11703111
+reviews_per_month      -19.89275804  23.78326327
+availability_365        -0.03399515   0.08083671
+
+P-value for room_typePrivate room :  5.312519e-36 
+room_typePrivate room has a significant effect on Price (reject H0).
+
+P-value for room_typeShared room :  0.01346751 
+room_typeShared room has a significant effect on Price (reject H0).
+
+P-value for number_of_reviews :  0.3160969 
+number_of_reviews does not have a significant effect on Price (fail to reject H0).
+
+P-value for reviews_per_month :  0.8611359 
+reviews_per_month does not have a significant effect on Price (fail to reject H0).
+
+P-value for availability_365 :  0.423241 
+availability_365 does not have a significant effect on Price (fail to reject H0).
+
