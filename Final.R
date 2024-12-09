@@ -4,7 +4,7 @@ library(dplyr)
 library(readxl)
 
 # Load the cleaned data
-data <- read_excel("Filtered_Cleaned_Abnb_Data.xlsx")
+data <- read.csv("filtered_data.csv")
 
 # Descriptive Statistics
 summary(data)
