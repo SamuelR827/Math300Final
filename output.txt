@@ -1,352 +1,129 @@
-> # Load necessary libraries
-> library(ggplot2)
-> library(dplyr)
-> library(readxl)
-> 
-> # Load the cleaned data
-> data <- read.csv("filtered_data.csv")
-> 
-> # Descriptive Statistics
-> summary(data)
-       id         neighbourhood       room_type             price        
- Min.   :  2539   Length:1000        Length:1000        Min.   :  20.00  
- 1st Qu.: 67210   Class :character   Class :character   1st Qu.:  87.75  
- Median :228026   Mode  :character   Mode  :character   Median : 125.00  
- Mean   :235767                                         Mean   : 154.47  
- 3rd Qu.:369476                                         3rd Qu.: 195.00  
- Max.   :578267                                         Max.   :1300.00  
- number_of_reviews reviews_per_month calculated_host_listings_count
- Min.   :  1.00    Min.   :0.010     Min.   : 1.000                
- 1st Qu.: 23.00    1st Qu.:0.290     1st Qu.: 1.000                
- Median : 59.00    Median :0.690     Median : 1.000                
- Mean   : 92.08    Mean   :1.034     Mean   : 2.426                
- 3rd Qu.:134.00    3rd Qu.:1.500     3rd Qu.: 2.000                
- Max.   :474.00    Max.   :7.140     Max.   :28.000                
- availability_365
- Min.   :  1.0   
- 1st Qu.: 90.0   
- Median :233.0   
- Mean   :206.9   
- 3rd Qu.:308.0   
- Max.   :365.0   
-> 
-> # Boxplots for Price by Room Type
-> ggplot(data, aes(x = room_type, y = price)) +
-+   geom_boxplot(fill = "blue", color = "black") +
-+   labs(title = "Price by Room Type",
-+        x = "Room Type",
-+        y = "Price")
-> 
-> # Histogram of Prices
-> ggplot(data, aes(x = price)) +
-+   geom_histogram(bins = 30, fill = "blue", color = "black") +
-+   labs(title = "Histogram of Prices",
-+        x = "Price",
-+        y = "Count")
-> 
-> # ---- Function for Confidence Intervals and Hypothesis Testing ----
-> display_conf_intervals <- function(model, model_name) {
-+   cat("Confidence Intervals for", model_name, "Model:\n")
-+   print(confint(model))
-+   cat("\n")
-+ }
-> 
-> perform_hypothesis_testing <- function(model, predictors) {
-+   for (predictor in predictors) {
-+     p_value <- summary(model)$coefficients[predictor, 4]
-+     cat("P-value for", predictor, ": ", p_value, "\n")
-+     if (p_value < 0.05) {
-+       cat(predictor, "has a significant effect on Price (reject H0).\n")
-+     } else {
-+       cat(predictor, "does not have a significant effect on Price (fail to reject H0).\n")
-+     }
-+     cat("\n")
-+   }
-+ }
-> 
-> # ---- Regression Models, Visualizations, Residual Analysis, and Hypothesis Testing ----
-> 
-> # 1. Price vs Availability (availability_365)
-> model_availability <- lm(price ~ availability_365, data = data)
-> summary(model_availability)
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(readxl)
 
-Call:
-lm(formula = price ~ availability_365, data = data)
+# Load the cleaned data
+data <- read.csv("filtered_data2.csv")
 
-Residuals:
-    Min      1Q  Median      3Q     Max 
--133.55  -66.95  -27.82   37.27 1149.90 
+# Descriptive Statistics
+summary(data)
 
-Coefficients:
-                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)      164.51733    7.08990  23.204   <2e-16 ***
-availability_365  -0.04854    0.02988  -1.624    0.105    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# Histogram of Prices
+p2 <- ggplot(data, aes(x = price)) +
+  geom_histogram(bins = 30, fill = "blue", color = "black") +
+  labs(title = "Histogram of Prices",
+       x = "Price",
+       y = "Count")
+p2
+ggsave("histogram_of_prices.png", plot = p2, width = 8, height = 6)
 
-Residual standard error: 109.8 on 998 degrees of freedom
-Multiple R-squared:  0.002637,	Adjusted R-squared:  0.001637 
-F-statistic: 2.639 on 1 and 998 DF,  p-value: 0.1046
+# ---- Function for Confidence Intervals and Hypothesis Testing ----
+display_conf_intervals <- function(model, model_name) {
+  cat("Confidence Intervals for", model_name, "Model:\n")
+  print(confint(model))
+  cat("\n")
+}
 
-> 
-> # Visualization
-> ggplot(data, aes(x = availability_365, y = price)) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_smooth(method = "lm", color = "red", linetype = "dashed") +
-+   labs(title = "Price vs. Availability (availability_365)",
-+        x = "Availability (days per year)",
-+        y = "Price")
-`geom_smooth()` using formula = 'y ~ x'
-> 
-> # Residual Analysis
-> ggplot(data, aes(x = predict(model_availability), y = resid(model_availability))) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Residuals vs Fitted (Availability)",
-+        x = "Fitted Values",
-+        y = "Residuals")
-> 
-> # Confidence Intervals and Hypothesis Testing
-> display_conf_intervals(model_availability, "Availability")
-Confidence Intervals for Availability Model:
-                       2.5 %       97.5 %
-(Intercept)      150.6045109 178.43014372
-availability_365  -0.1071709   0.01009907
+perform_hypothesis_testing <- function(model, predictors) {
+  for (predictor in predictors) {
+    p_value <- summary(model)$coefficients[predictor, 4]
+    cat("P-value for", predictor, ": ", p_value, "\n")
+    if (p_value < 0.05) {
+      cat(predictor, "has a significant effect on Price (reject H0).\n")
+    } else {
+      cat(predictor, "does not have a significant effect on Price (fail to reject H0).\n")
+    }
+    cat("\n")
+  }
+}
 
-> perform_hypothesis_testing(model_availability, c("availability_365"))
-P-value for availability_365 :  0.1046153 
-availability_365 does not have a significant effect on Price (fail to reject H0).
+# ---- Regression Models, Visualizations, Residual Analysis, and Hypothesis Testing ----
 
-> 
-> # 2. Price vs Number of Reviews
-> model_reviews <- lm(price ~ number_of_reviews, data = data)
-> summary(model_reviews)
+# Boxplots for Price by Room Type
+# ---- Regression Model for Price by Room Type ----
+model_room_type <- lm(price ~ room_type, data = data)
+summary(model_room_type)
 
-Call:
-lm(formula = price ~ number_of_reviews, data = data)
+p1 <- ggplot(data, aes(x = room_type, y = price)) +
+  geom_boxplot(fill = "blue", color = "black") +
+  labs(title = "Price by Room Type",
+       x = "Room Type",
+       y = "Price")
+p1
+ggsave("boxplot_price_by_room_type.png", plot = p1, width = 8, height = 6)
 
-Residuals:
-    Min      1Q  Median      3Q     Max 
--136.37  -66.87  -27.71   35.34 1135.45 
+# 1. Price vs Availability (availability_365)
+model_availability <- lm(price ~ availability_365, data = data)
+summary(model_availability)
 
-Coefficients:
-                   Estimate Std. Error t value Pr(>|t|)    
-(Intercept)       168.95106    4.89053  34.547  < 2e-16 ***
-number_of_reviews  -0.15721    0.03769  -4.171  3.3e-05 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+p3 <- ggplot(data, aes(x = availability_365, y = price)) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_smooth(method = "lm", color = "red", linetype = "dashed") +
+  labs(title = "Price vs. Availability (availability_365)",
+       x = "Availability (days per year)",
+       y = "Price")
+p3
+ggsave("price_vs_availability.png", plot = p3, width = 8, height = 6)
 
-Residual standard error: 109 on 998 degrees of freedom
-Multiple R-squared:  0.01713,	Adjusted R-squared:  0.01615 
-F-statistic: 17.39 on 1 and 998 DF,  p-value: 3.3e-05
+# Residual Analysis for Availability
+p4 <- ggplot(data, aes(x = predict(model_availability), y = resid(model_availability))) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  labs(title = "Residuals vs Fitted (Availability)",
+       x = "Fitted Values",
+       y = "Residuals")
+p4
+ggsave("residuals_availability.png", plot = p4, width = 8, height = 6)
 
-> 
-> # Visualization
-> ggplot(data, aes(x = number_of_reviews, y = price)) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_smooth(method = "lm", color = "red", linetype = "dashed") +
-+   labs(title = "Price vs. Number of Reviews",
-+        x = "Number of Reviews",
-+        y = "Price")
-`geom_smooth()` using formula = 'y ~ x'
-> 
-> # Residual Analysis
-> ggplot(data, aes(x = predict(model_reviews), y = resid(model_reviews))) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Residuals vs Fitted (Number of Reviews)",
-+        x = "Fitted Values",
-+        y = "Residuals")
-> 
-> # Confidence Intervals and Hypothesis Testing
-> display_conf_intervals(model_reviews, "Number of Reviews")
-Confidence Intervals for Number of Reviews Model:
-                        2.5 %       97.5 %
-(Intercept)       159.3541571 178.54795470
-number_of_reviews  -0.2311781  -0.08324194
+# Confidence Intervals and Hypothesis Testing
+display_conf_intervals(model_availability, "Availability")
+perform_hypothesis_testing(model_availability, c("availability_365"))
 
-> perform_hypothesis_testing(model_reviews, c("number_of_reviews"))
-P-value for number_of_reviews :  3.300479e-05 
-number_of_reviews has a significant effect on Price (reject H0).
+# 2. Price vs Number of Reviews
+model_reviews <- lm(price ~ number_of_reviews, data = data)
+summary(model_reviews)
 
-> 
-> # 3. Price vs Reviews Per Month
-> model_reviews_per_month <- lm(price ~ reviews_per_month, data = data)
-> summary(model_reviews_per_month)
+p5 <- ggplot(data, aes(x = number_of_reviews, y = price)) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_smooth(method = "lm", color = "red", linetype = "dashed") +
+  labs(title = "Price vs. Number of Reviews",
+       x = "Number of Reviews",
+       y = "Price")
+p5
+ggsave("price_vs_number_of_reviews.png", plot = p5, width = 8, height = 6)
 
-Call:
-lm(formula = price ~ reviews_per_month, data = data)
+# Residual Analysis for Number of Reviews
+p6 <- ggplot(data, aes(x = predict(model_reviews), y = resid(model_reviews))) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  labs(title = "Residuals vs Fitted (Number of Reviews)",
+       x = "Fitted Values",
+       y = "Residuals")
+p6
+ggsave("residuals_number_of_reviews.png", plot = p6, width = 8, height = 6)
 
-Residuals:
-    Min      1Q  Median      3Q     Max 
--136.12  -67.16  -28.19   34.91 1135.04 
+# 3. Price vs Reviews Per Month
+model_reviews_per_month <- lm(price ~ reviews_per_month, data = data)
+summary(model_reviews_per_month)
 
-Coefficients:
-                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)        169.450      4.936  34.327  < 2e-16 ***
-reviews_per_month  -14.487      3.421  -4.235  2.5e-05 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+p7 <- ggplot(data, aes(x = reviews_per_month, y = price)) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_smooth(method = "lm", color = "red", linetype = "dashed") +
+  labs(title = "Price vs. Reviews Per Month",
+       x = "Reviews Per Month",
+       y = "Price")
+p7
+ggsave("price_vs_reviews_per_month.png", plot = p7, width = 8, height = 6)
 
-Residual standard error: 108.9 on 998 degrees of freedom
-Multiple R-squared:  0.01765,	Adjusted R-squared:  0.01667 
-F-statistic: 17.93 on 1 and 998 DF,  p-value: 2.499e-05
+# Residual Analysis for Reviews Per Month
+p8 <- ggplot(data, aes(x = predict(model_reviews_per_month), y = resid(model_reviews_per_month))) +
+  geom_point(alpha = 0.5, color = "blue") +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  labs(title = "Residuals vs Fitted (Reviews Per Month)",
+       x = "Fitted Values",
+       y = "Residuals")
+p8
+ggsave("residuals_reviews_per_month.png", plot = p8, width = 8, height = 6)
 
-> 
-> # Visualization
-> ggplot(data, aes(x = reviews_per_month, y = price)) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_smooth(method = "lm", color = "red", linetype = "dashed") +
-+   labs(title = "Price vs. Reviews Per Month",
-+        x = "Reviews Per Month",
-+        y = "Price")
-`geom_smooth()` using formula = 'y ~ x'
-> 
-> # Residual Analysis
-> ggplot(data, aes(x = predict(model_reviews_per_month), y = resid(model_reviews_per_month))) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Residuals vs Fitted (Reviews Per Month)",
-+        x = "Fitted Values",
-+        y = "Residuals")
-> 
-> # Confidence Intervals and Hypothesis Testing
-> display_conf_intervals(model_reviews_per_month, "Reviews Per Month")
-Confidence Intervals for Reviews Per Month Model:
-                      2.5 %     97.5 %
-(Intercept)       159.76279 179.136517
-reviews_per_month -21.20066  -7.774223
 
-> perform_hypothesis_testing(model_reviews_per_month, c("reviews_per_month"))
-P-value for reviews_per_month :  2.498518e-05 
-reviews_per_month has a significant effect on Price (reject H0).
-
-> 
-> # 4. Combined Reviews Model: Number of Reviews and Reviews Per Month
-> model_reviews_combined <- lm(price ~ number_of_reviews + reviews_per_month, data = data)
-> summary(model_reviews_combined)
-
-Call:
-lm(formula = price ~ number_of_reviews + reviews_per_month, data = data)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--136.25  -66.87  -27.93   35.05 1134.95 
-
-Coefficients:
-                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)       169.6161     4.9508  34.260   <2e-16 ***
-number_of_reviews  -0.0573     0.1211  -0.473    0.636    
-reviews_per_month  -9.5436    10.9985  -0.868    0.386    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 109 on 997 degrees of freedom
-Multiple R-squared:  0.01787,	Adjusted R-squared:  0.0159 
-F-statistic: 9.072 on 2 and 997 DF,  p-value: 0.0001246
-
-> 
-> # Visualization
-> ggplot(data, aes(x = predict(model_reviews_combined), y = price)) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Actual vs Predicted Prices (Combined Reviews)",
-+        x = "Predicted Price",
-+        y = "Actual Price")
-> 
-> # Residual Analysis
-> ggplot(data, aes(x = predict(model_reviews_combined), y = resid(model_reviews_combined))) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Residuals vs Fitted (Combined Reviews)",
-+        x = "Fitted Values",
-+        y = "Residuals")
-> 
-> # Confidence Intervals and Hypothesis Testing
-> display_conf_intervals(model_reviews_combined, "Combined Reviews")
-Confidence Intervals for Combined Reviews Model:
-                        2.5 %      97.5 %
-(Intercept)       159.9008557 179.3312654
-number_of_reviews  -0.2950445   0.1804397
-reviews_per_month -31.1264453  12.0391615
-
-> perform_hypothesis_testing(model_reviews_combined, c("number_of_reviews", "reviews_per_month"))
-P-value for number_of_reviews :  0.6363311 
-number_of_reviews does not have a significant effect on Price (fail to reject H0).
-
-P-value for reviews_per_month :  0.3857539 
-reviews_per_month does not have a significant effect on Price (fail to reject H0).
-
-> 
-> # 5. Full Model: All Variables Together
-> model_full <- lm(price ~ room_type + number_of_reviews + reviews_per_month + availability_365, data = data)
-> summary(model_full)
-
-Call:
-lm(formula = price ~ room_type + number_of_reviews + reviews_per_month + 
-    availability_365, data = data)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--145.29  -52.27  -16.50   20.89 1097.55 
-
-Coefficients:
-                        Estimate Std. Error t value Pr(>|t|)    
-(Intercept)            201.84233    7.32267  27.564  < 2e-16 ***
-room_typePrivate room  -92.47885    6.46203 -14.311  < 2e-16 ***
-room_typeShared room  -123.83254   41.18748  -3.007  0.00271 ** 
-number_of_reviews       -0.06228    0.11112  -0.560  0.57532    
-reviews_per_month       -5.52725   10.10885  -0.547  0.58466    
-availability_365         0.01369    0.02744   0.499  0.61796    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 99.11 on 994 degrees of freedom
-Multiple R-squared:  0.1899,	Adjusted R-squared:  0.1858 
-F-statistic: 46.59 on 5 and 994 DF,  p-value: < 2.2e-16
-
-> 
-> # Visualization
-> data$predicted_price <- predict(model_full)
-> ggplot(data, aes(x = predicted_price, y = price)) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_abline(slope = 1, intercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Actual vs Predicted Prices (Full Model)",
-+        x = "Predicted Price",
-+        y = "Actual Price")
-> 
-> # Residual Analysis
-> ggplot(data, aes(x = predict(model_full), y = resid(model_full))) +
-+   geom_point(alpha = 0.5, color = "blue") +
-+   geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
-+   labs(title = "Residuals vs Fitted (Full Model)",
-+        x = "Fitted Values",
-+        y = "Residuals")
-> 
-> # Confidence Intervals and Hypothesis Testing
-> display_conf_intervals(model_full, "Full")
-Confidence Intervals for Full Model:
-                              2.5 %       97.5 %
-(Intercept)            187.47266512 216.21199542
-room_typePrivate room -105.15964440 -79.79806455
-room_typeShared room  -204.65693350 -43.00814499
-number_of_reviews       -0.28033735   0.15578606
-reviews_per_month      -25.36438616  14.30989080
-availability_365        -0.04015052   0.06752547
-
-> perform_hypothesis_testing(model_full, c("room_typePrivate room", "room_typeShared room", 
-+                                          "number_of_reviews", "reviews_per_month", "availability_365"))
-P-value for room_typePrivate room :  2.224487e-42 
-room_typePrivate room has a significant effect on Price (reject H0).
-
-P-value for room_typeShared room :  0.002708655 
-room_typeShared room has a significant effect on Price (reject H0).
-
-P-value for number_of_reviews :  0.5753171 
-number_of_reviews does not have a significant effect on Price (fail to reject H0).
-
-P-value for reviews_per_month :  0.5846574 
-reviews_per_month does not have a significant effect on Price (fail to reject H0).
-
-P-value for availability_365 :  0.6179617 
-availability_365 does not have a significant effect on Price (fail to reject H0).
